@@ -12,13 +12,13 @@
         android:orientation="vertical"
         android:layout_centerInParent="true">
 
-        <android.support.v7.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="@dimen/slide_icon_wh"
             android:layout_height="@dimen/slide_icon_wh"
             android:layout_gravity="center_horizontal"
             android:id="@+id/slide_image" />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/slide_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
             android:textColor="@android:color/white"
             />
 
-        <android.support.v7.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/slide_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

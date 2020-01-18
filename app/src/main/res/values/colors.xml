@@ -11,6 +11,6 @@
     <color name="slide_3_bg_color">#3395ff</color>
     <color name="slide_4_bg_color">#bb68e6</color>
 
-    <color name="dot_incative">#a3a3a3</color>
+    <color name="dot_inactive">#a3a3a3</color>
     <color name="dot_active">#ffffff</color>
 </resources>

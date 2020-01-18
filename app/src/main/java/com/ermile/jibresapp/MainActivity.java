@@ -12,8 +12,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        SliderPrefManager prefman = new SliderPrefManager(this);
+//        if (prefman.startSlider()){
+//            Intent intent = new Intent(this, IntroSliderActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
     }
-
     public void playAgain(View v){
         new SliderPrefManager(this).setStartSlider(true);
         Intent intent = new Intent(this, IntroSliderActivity.class);
