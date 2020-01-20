@@ -13,4 +13,5 @@
 
     <color name="dot_inactive">#a3a3a3</color>
     <color name="dot_active">#ffffff</color>
+    <color name="logo">#ffffff</color>
 </resources>
