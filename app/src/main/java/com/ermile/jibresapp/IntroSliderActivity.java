@@ -37,10 +37,7 @@ public class IntroSliderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intro_slider);
         changeStatusBarColor();
         prefMan = new SliderPrefManager(this);
-        if (!prefMan.startSlider()){
-            launchMainScreen();
-            finish();
-        }
+
         viewPager = findViewById(R.id.view_pager);
         layoutDots = findViewById(R.id.layoutDots);
         btnNext = findViewById(R.id.btn_next);
