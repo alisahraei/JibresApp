@@ -1,24 +1,23 @@
 package com.ermile.jibresapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private SliderPrefManager prefMan;
-    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
         prefMan = new SliderPrefManager(this);
-
 
         ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 
@@ -75,9 +74,6 @@ public class SplashScreenActivity extends AppCompatActivity {
 //             Toast.makeText(this, "Network connection is not available", Toast.LENGTH_SHORT).show();
 //          }
 //       }
-
-
-
 //       private boolean haveNetwork(){
 //          boolean have_WIFI = false;
 //          boolean have_MobileData = false;
