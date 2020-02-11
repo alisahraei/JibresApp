@@ -5,6 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreenActivity">
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        app:lottie_fileName="launch2.json" />
     <ImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
