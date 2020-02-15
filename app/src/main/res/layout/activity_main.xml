@@ -9,14 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ermile.jibresapp.MainActivity">
+    <WebView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/webveiw"/>
 
-    <Button
-        android:onClick="playAgain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:text="Play Again"
-        android:textSize="24sp"
-        />
 </RelativeLayout>
