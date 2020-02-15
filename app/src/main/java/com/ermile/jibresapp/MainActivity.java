@@ -15,6 +15,17 @@ WebView webView;
         webView = findViewById(R.id.webveiw);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://jibres.ir/dashboard");
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+}
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
 //        SliderPrefManager prefman = new SliderPrefManager(this);
 //        if (prefman.startSlider()){
 //            Intent intent = new Intent(this, IntroSliderActivity.class);
