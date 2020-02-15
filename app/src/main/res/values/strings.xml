@@ -15,7 +15,8 @@
     <string name="skip">Skip</string>
     <string name="next">Next</string>
     <string name="lets">Lets start</string>
-
+    <string name="english">English</string>
+    <string name="persian">فارسی</string>
 
     <string-array name="slide_titles">
         <item>@string/slide_1_title</item>
