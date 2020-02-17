@@ -1,41 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BottomSheetActivity">
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        app:lottie_autoPlay="true"
-        app:lottie_fileName="connection2.json"
-        app:lottie_loop="true"
-        android:id="@+id/anime"/>
+    tools:context=".BottomSheetActivity"
+    android:id="@+id/bottom_sheet"
+    android:paddingTop="50dp"
+    android:orientation="vertical"
+    app:layout_constraintCircleRadius="10dp">
     <LinearLayout
-        android:layout_below="@+id/anime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
-        <TextView
-            android:id="@+id/tv_error"
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="connection2.json"
+            app:lottie_loop="true"
+            android:id="@+id/anime"/>
+        <LinearLayout
+            android:layout_above="@+id/anime"
             android:layout_width="wrap_content"
-            android:paddingBottom="5dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:text="@string/internet"
-            android:textSize="15dp"/>
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/net"
-            android:layout_below="@+id/tv_error"/>
+            <TextView
+                android:id="@+id/tv_error"
+                android:layout_width="fill_parent"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
+                android:text="@string/internet"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/net"
+                android:layout_below="@+id/tv_error"/>
+        </LinearLayout>
     </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="Refresh"
+        android:elevation="5dp" />
 
-</RelativeLayout>
+</LinearLayout>
