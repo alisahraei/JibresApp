@@ -19,6 +19,8 @@
     <string name="persian">فارسی</string>
     <string name="internet">Network not available</string>
     <string name="net"> please check your connection...</string>
+    <string name="jibres">جیبرس</string>
+    <string name="sale">بفروش و لذت ببر</string>
     <string-array name="slide_titles">
         <item>@string/slide_1_title</item>
         <item>@string/slide_2_title</item>
