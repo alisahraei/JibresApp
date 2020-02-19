@@ -11,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private SliderPrefManager prefMan;
-
+    @Override
+    protected void onResume(){
+        super.onResume();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +35,8 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         if (!is3g && !isWifi) {
             Toast.makeText(this, "Network connection is not available", Toast.LENGTH_SHORT).show();
-
+            BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
+            bottomSheetDialog.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
         } else {
 //                " Your method what you want to do "
             Toast.makeText(this, "Network connection is available", Toast.LENGTH_SHORT).show();
