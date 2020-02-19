@@ -8,13 +8,15 @@
     android:id="@+id/bottom_sheet"
     android:paddingTop="50dp"
     android:orientation="vertical"
-    app:layout_constraintCircleRadius="10dp">
+    app:layout_constraintCircleRadius="10dp"
+    android:background="@drawable/radius"
+    android:alpha="1"
+   >
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center">
-
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -51,7 +53,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
         android:text="Refresh"
-        android:elevation="5dp" />
+        android:id="@+id/refresh"
+        android:background="#E6DFDF"/>
 
 </LinearLayout>
