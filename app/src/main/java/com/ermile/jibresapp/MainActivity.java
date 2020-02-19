@@ -11,7 +11,7 @@ WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bottom_sheet);
+        setContentView(R.layout.activity_main);
         webView = findViewById(R.id.webveiw);
 //        webView.setWebViewClient(new WebViewClient());
 //        WebSettings webSettings = webView.getSettings();
