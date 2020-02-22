@@ -12,9 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SplashScreenActivity extends AppCompatActivity {
     private SliderPrefManager prefMan;
     @Override
-    protected void onResume() {
-
-       super.onResume();
+    protected void onResume(){
+        super.onResume();
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,56 +21,25 @@ public class SplashScreenActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
         prefMan = new SliderPrefManager(this);
-        haveNetwork();
-//        ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-//
-//        boolean is3g = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
-//                .isConnectedOrConnecting();
-//        //For WiFi Check
-//        boolean isWifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI)
-//                .isConnectedOrConnecting();
-//
-//        System.out.println(is3g + " net " + isWifi);
-//
-//        if (!is3g && !isWifi) {
-//            Toast.makeText(this, "Network connection is not available", Toast.LENGTH_SHORT).show();
-//            BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
-//            bottomSheetDialog.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
-//
-//        } else {
-////                " Your method what you want to do "
-//            Toast.makeText(this, "Network connection is available", Toast.LENGTH_SHORT).show();
-//            new Handler().postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//                    Intent intent;
-//                    if (!prefMan.startSlider()) {
-//                        intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-//                    } else {
-//                        intent = new Intent(SplashScreenActivity.this, IntroSliderActivity.class);
-//                    }
-//                    startActivity(intent);
-//                    finish();
-//                }
-//            }, 3000);
-//        }
 
-
-    }
-    public void haveNetwork(){
-        //For 3G check
         ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 
+        //For 3G check
         boolean is3g = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE)
                 .isConnectedOrConnecting();
         //For WiFi Check
         boolean isWifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI)
                 .isConnectedOrConnecting();
+
         System.out.println(is3g + " net " + isWifi);
-        if (!is3g && !isWifi){
-            Refresh();
+
+        if (!is3g && !isWifi) {
+            Toast.makeText(this, "Network connection is not available", Toast.LENGTH_SHORT).show();
+            BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
+            bottomSheetDialog.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
         } else {
-            Toast.makeText(this, "this", Toast.LENGTH_SHORT).show();
+//                " Your method what you want to do "
+            Toast.makeText(this, "Network connection is available", Toast.LENGTH_SHORT).show();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -85,28 +53,42 @@ public class SplashScreenActivity extends AppCompatActivity {
                     finish();
                 }
             }, 3000);
-
         }
-
-
-    }
-
-    public void Refresh() {
-        Toast.makeText(this, "nots", Toast.LENGTH_SHORT).show();
-        BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
-        bottomSheetDialog.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
-        BottomSheetFragment bottomSheetFragment = new BottomSheetFragment();
-        bottomSheetFragment.setCancelable(false);
-        bottomSheetFragment.setListener(() -> {
-            bottomSheetFragment.dismiss();
-            finish();
-            startActivity(getIntent());
-        });
-        bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
 
     }
 
 }
 
+
+//        if (haveNetwork()){
+//             Toast.makeText(this, "Network connection is available", Toast.LENGTH_SHORT).show();
+//             new Handler().postDelayed(new Runnable() {
+//                 @Override
+//                 public void run() {
+//                    Intent intent;
+//                    if (!prefMan.startSlider()){
+//                        intent = new Intent(SplashScreenActivity.this , MainActivity.class);
+//                    }else {
+//                        intent = new Intent(SplashScreenActivity.this , IntroSliderActivity.class);
+//                    }
+//                    startActivity(intent);
+//                    finish();
+//                 }
+//             },3000);
+//          } else if (!haveNetwork()) {
+//             Toast.makeText(this, "Network connection is not available", Toast.LENGTH_SHORT).show();
+//          }
+//       }
+//       private boolean haveNetwork(){
+//          boolean have_WIFI = false;
+//          boolean have_MobileData = false;
+//          ConnectivityManager check = (ConnectivityManager)getSystemService(CONNECTIVITY_SERVICE);
+//          NetworkInfo[] networkInfos = check.getAllNetworkInfo();
+//          for(NetworkInfo info:networkInfos){
+//             if (info.getTypeName().equalsIgnoreCase("WIFI"))if (info.isConnected())have_WIFI=true;
+//             if (info.getTypeName().equalsIgnoreCase("MOBILE DATA"))if (info.isConnected())have_MobileData=true;
+//          }
+//          return have_WIFI||have_MobileData;
+//       }
 
 

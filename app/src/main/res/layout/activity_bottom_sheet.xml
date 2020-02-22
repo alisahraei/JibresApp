@@ -48,20 +48,15 @@
                 android:layout_below="@+id/tv_error"/>
         </LinearLayout>
     </LinearLayout>
-    <RelativeLayout
+    <Button
         android:layout_width="match_parent"
-        android:id="@+id/mammad"
-        android:layout_height="match_parent">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="10dp"
-            android:text="Refresh"
-            android:background="#E6DFDF"/>
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        android:text="Refresh"
+        android:id="@+id/refresh"
+        android:background="#E6DFDF"/>
 
 </LinearLayout>
