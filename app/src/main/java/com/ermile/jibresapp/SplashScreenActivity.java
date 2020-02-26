@@ -95,6 +95,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         Toast.makeText(this, "nots", Toast.LENGTH_SHORT).show();
         BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
         bottomSheetDialog.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
+
         BottomSheetFragment bottomSheetFragment = new BottomSheetFragment();
         bottomSheetFragment.setCancelable(false);
         bottomSheetFragment.setListener(() -> {
