@@ -21,6 +21,12 @@
     <string name="net"> please check your connection...</string>
     <string name="jibres">جیبرس</string>
     <string name="sale">بفروش و لذت ببر</string>
+    <string name="version">version</string>
+    <string name="hi">Hi!</string>
+    <string name="welcom">wellcom</string>
+    <string name="choose">Choose your language:</string>
+    <string name="hi_fa">سلام!</string>
+    <string name="wellcom_fa">خوش آمدید</string>
     <string-array name="slide_titles">
         <item>@string/slide_1_title</item>
         <item>@string/slide_2_title</item>

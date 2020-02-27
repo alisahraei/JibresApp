@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -70,17 +69,14 @@ public class IntroSliderActivity extends AppCompatActivity {
 
             }
         });
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int currentPage = viewPager.getCurrentItem();
-                int lastPages = viewPager.getAdapter().getCount()-1;
-                if(currentPage == lastPages){
-                    prefMan.setStartSlider(false);
-                    launchMainScreen();
-                } else{
-                    viewPager.setCurrentItem(currentPage+1);
-                }
+        btnNext.setOnClickListener(view -> {
+            int currentPage = viewPager.getCurrentItem();
+            int lastPages = viewPager.getAdapter().getCount()-1;
+            if(currentPage == lastPages){
+                prefMan.setStartSlider(false);
+                launchMainScreen();
+            } else{
+                viewPager.setCurrentItem(currentPage+1);
             }
         });
 
@@ -142,7 +138,6 @@ public class IntroSliderActivity extends AppCompatActivity {
             view.findViewById(R.id.bgLayout).setBackgroundColor(
                     ContextCompat.getColor(IntroSliderActivity.this, bgColorIds[position])
             );
-            ((ImageView) view.findViewById(R.id.slide_image)).setImageResource(slideImageIds[position]);
             ((TextView) view.findViewById(R.id.slide_title)).setText(slideTitles[position]);
             ((TextView) view.findViewById(R.id.slide_desc)).setText(slideDescriptions[position]);
             container.addView(view);

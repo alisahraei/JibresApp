@@ -12,11 +12,6 @@
         android:orientation="vertical"
         android:layout_centerInParent="true">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/slide_icon_wh"
-            android:layout_height="@dimen/slide_icon_wh"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/slide_image" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/slide_title"

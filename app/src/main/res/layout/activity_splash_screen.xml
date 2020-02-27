@@ -59,7 +59,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:text="version"
+        android:text="@string/version"
         android:textColor="#ffffff"
         android:textSize="15sp" />
 

@@ -5,7 +5,6 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -71,7 +70,6 @@ public class SplashScreenActivity extends AppCompatActivity {
         if (!is3g && !isWifi){
             Refresh();
         } else {
-            Toast.makeText(this, "this", Toast.LENGTH_SHORT).show();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -92,10 +90,8 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     public void Refresh() {
-        Toast.makeText(this, "nots", Toast.LENGTH_SHORT).show();
         BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
         bottomSheetDialog.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
-
         BottomSheetFragment bottomSheetFragment = new BottomSheetFragment();
         bottomSheetFragment.setCancelable(false);
         bottomSheetFragment.setListener(() -> {

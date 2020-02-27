@@ -2,13 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".BottomSheetActivity"
     android:id="@+id/bottom_sheet"
     android:paddingTop="50dp"
     android:orientation="vertical"
-    app:layout_constraintCircleRadius="10dp"
     android:background="@drawable/radius"
     android:alpha="1"
    >
@@ -53,17 +52,16 @@
         android:id="@+id/mammad"
         android:layout_height="match_parent">
 
-        <Button
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="15dp"
-            android:layout_marginTop="10dp"
-            android:textSize="25sp"
-            android:text="Refresh"
             android:gravity="center"
-            android:background="#E6DFDF"/>
+            android:text="Refresh"
+            android:textSize="20sp" />
     </RelativeLayout>
 
 </LinearLayout>

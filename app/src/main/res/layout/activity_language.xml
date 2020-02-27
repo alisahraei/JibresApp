@@ -7,20 +7,97 @@
     android:background="@color/bg_language"
     tools:context=".LanguageActivity"
     android:layout_centerInParent="true">
-    <Button
+    <TextView
+        android:id="@+id/lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lin_center"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/choose"
+        android:textSize="20sp" />
+    <LinearLayout
+        android:id="@+id/lin_center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:id="@+id/btn_en"
-        android:text="@string/english"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_below="@+id/btn_en"
-        android:id="@+id/btn_fa"
-        android:text="@string/persian"/>
+        android:orientation="horizontal">
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/radius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:textSize="17sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hi"/>
+                <TextView
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcom"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_en"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/english"
+                android:layout_marginBottom="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginLeft="17dp"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/radius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layoutDirection="rtl">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp"
+                >
+
+                <TextView
+                    android:textSize="17sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hi_fa"/>
+                <TextView
+                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wellcom_fa"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btn_fa"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/persian"
+                android:layout_marginBottom="17dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginLeft="17dp"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
 
 </RelativeLayout>
