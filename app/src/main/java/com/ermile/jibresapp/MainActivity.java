@@ -1,5 +1,6 @@
 package com.ermile.jibresapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -11,15 +12,16 @@ public class MainActivity extends AppCompatActivity {
 WebView webView;
 
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        webView = findViewById(R.id.webveiw);
+        webView = findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("https://jibres.ir/dashboard");
+        webView.loadUrl("https://jibres.ir/enter");
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }

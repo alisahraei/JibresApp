@@ -8,6 +8,6 @@
     <WebView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/webveiw"/>
+        android:id="@+id/webview"/>
 <!--    <include layout="@layout/activity_bottom_sheet"/>-->
 </RelativeLayout>
