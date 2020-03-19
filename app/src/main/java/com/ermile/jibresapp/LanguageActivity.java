@@ -1,12 +1,13 @@
 package com.ermile.jibresapp;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LanguageActivity extends AppCompatActivity {
-Button btn_en, btn_fa;
+View btn_en, btn_fa;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
