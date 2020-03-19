@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private SliderPrefManager prefMan;
+    private LangPrefManager langpref;
     @Override
     protected void onResume() {
 
@@ -21,6 +22,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
         prefMan = new SliderPrefManager(this);
+        langpref = new LangPrefManager(this);
+
         haveNetwork();
 //        ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 //
@@ -74,7 +77,9 @@ public class SplashScreenActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     Intent intent;
-                    if (!prefMan.startSlider()) {
+                    if (langpref.startLang()){
+                        intent = new Intent(SplashScreenActivity.this, LanguageActivity.class);
+                    } else if (!prefMan.startSlider()) {
                         intent = new Intent(SplashScreenActivity.this, MainActivity.class);
                     } else {
                         intent = new Intent(SplashScreenActivity.this, IntroSliderActivity.class);
