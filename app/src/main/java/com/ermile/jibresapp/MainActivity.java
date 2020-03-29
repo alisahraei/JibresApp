@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 WebView webView;
-
-
+String url = "https://jibres.com/dashboard";
+boolean doubleBackToExitPressedOnce = false;
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +22,7 @@ WebView webView;
         webView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("https://jibres.ir/enter");
+        webView.loadUrl(url);
         if (getSupportActionBar() != null){
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
@@ -31,7 +32,12 @@ WebView webView;
         if (webView.canGoBack()) {
             webView.goBack();
         } else {
+            if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
+            return;
+            }
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
         }
     }
 
