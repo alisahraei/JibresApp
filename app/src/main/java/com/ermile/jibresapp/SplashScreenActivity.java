@@ -91,10 +91,20 @@ public class SplashScreenActivity extends AppCompatActivity {
             }, 3000);
 
         }
-
-
     }
-
+    void setDefaultLanguage() {
+        if (getAppLanguage() == null) {
+            String deviceLanguage = Locale.getDefault().getLanguage();
+            if (deviceLanguage.equals("fa")) {
+                AppManager.get(getApplicationContext()).setAppLanguage(deviceLanguage);
+            } else {
+                AppManager.get(getApplicationContext()).setAppLanguage("en");
+            }
+        }
+    }
+    String getAppLanguage() {
+        return AppManager.getAppLanguage(getApplication());
+    }
     public void Refresh() {
         BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
         bottomSheetDialog.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");
