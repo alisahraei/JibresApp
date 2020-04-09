@@ -25,7 +25,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         prefMan = new SliderPrefManager(this);
 //        langpref = new LangPrefManager(this);
-
+        setDefaultLanguage();
         haveNetwork();
 //        ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 //
@@ -75,24 +75,26 @@ public class SplashScreenActivity extends AppCompatActivity {
         if (!is3g && !isWifi){
             Refresh();
         } else {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Intent intent;
-//                    if (langpref.startLang()){
-//                        intent = new Intent(SplashScreenActivity.this, LanguageActivity.class);
-//                    } else
-                    if (!prefMan.startSlider()) {
-                        intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-                    } else {
-                        intent = new Intent(SplashScreenActivity.this, IntroSliderActivity.class);
-                    }
-                    startActivity(intent);
-                    finish();
-                }
-            }, 3000);
-
+            checkSplash();
         }
+    }
+    void checkSplash(){
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent;
+//              if (langpref.startLang()){
+//                  intent = new Intent(SplashScreenActivity.this, LanguageActivity.class);
+//              } else
+                if (!prefMan.startSlider()) {
+                    intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                } else {
+                    intent = new Intent(SplashScreenActivity.this, IntroSliderActivity.class);
+                }
+                startActivity(intent);
+                finish();
+            }
+        }, 3000);
     }
     void setDefaultLanguage() {
         if (getAppLanguage() == null) {
