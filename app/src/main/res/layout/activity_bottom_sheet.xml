@@ -24,12 +24,10 @@
             app:lottie_loop="true"
             android:id="@+id/anime"/>
         <LinearLayout
-            android:layout_above="@+id/anime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="10dp">
+            android:layout_marginStart="10dp">
 
             <TextView
                 android:id="@+id/tv_error"
@@ -38,13 +36,12 @@
                 android:layout_marginTop="50dp"
                 android:layout_height="wrap_content"
                 android:text="@string/internet"
-                android:textSize="18dp"/>
+                android:textSize="18sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/net"
-                android:layout_below="@+id/tv_error"/>
+                android:text="@string/net" />
         </LinearLayout>
     </LinearLayout>
     <RelativeLayout
@@ -60,7 +57,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginBottom="15dp"
             android:gravity="center"
-            android:text="Refresh"
+            android:text="@string/refresh"
             android:textSize="20sp" />
     </RelativeLayout>
 

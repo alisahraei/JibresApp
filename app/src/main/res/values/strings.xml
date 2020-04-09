@@ -27,6 +27,7 @@
     <string name="choose">Choose your language:</string>
     <string name="hi_fa">سلام!</string>
     <string name="wellcom_fa">خوش آمدید</string>
+    <string name="refresh">Refresh</string>
     <string-array name="slide_titles">
         <item>@string/slide_1_title</item>
         <item>@string/slide_2_title</item>
