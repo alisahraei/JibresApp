@@ -8,9 +8,11 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Locale;
+
 public class SplashScreenActivity extends AppCompatActivity {
     private SliderPrefManager prefMan;
-    private LangPrefManager langpref;
+//    private LangPrefManager langpref;
     @Override
     protected void onResume() {
 
@@ -22,7 +24,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash_screen);
         prefMan = new SliderPrefManager(this);
-        langpref = new LangPrefManager(this);
+//        langpref = new LangPrefManager(this);
 
         haveNetwork();
 //        ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
@@ -105,6 +107,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     String getAppLanguage() {
         return AppManager.getAppLanguage(getApplication());
     }
+
     public void Refresh() {
         BottomSheetFragment bottomSheetDialog = BottomSheetFragment.newInstance();
         bottomSheetDialog.show(getSupportFragmentManager(), "Bottom Sheet Dialog Fragment");

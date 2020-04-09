@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class AppManager {
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     public static final String appLanguage = "appLanguage";
     public static final String pin_code = "pin_code";
     public static final String apikey = "apikey";
@@ -43,5 +44,8 @@ public class AppManager {
     public static AppManager get(Context context) {
         return new AppManager(context);
     }
-
+    public void setAppLanguage(String languageLocal) {
+            editor.putString(appLanguage, languageLocal);
+            editor.apply();
+        }
 }
