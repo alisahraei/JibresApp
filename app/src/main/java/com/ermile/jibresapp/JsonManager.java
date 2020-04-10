@@ -1,12 +1,13 @@
 package com.ermile.jibresapp;
 
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.SharedPreferences;
 
 import java.util.HashMap;
 import java.util.Map;
 
-class JsonManager {
+class JsonManager extends ContextWrapper {
     SharedPreferences sharedPreferences;
     public static final String json_splash = "json_splash";
     public static final String json_intro = "json_intro";
