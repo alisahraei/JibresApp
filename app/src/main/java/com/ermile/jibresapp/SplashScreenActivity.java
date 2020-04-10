@@ -8,6 +8,8 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONObject;
+
 import java.util.Locale;
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -108,6 +110,22 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
     String getAppLanguage() {
         return AppManager.getAppLanguage(getApplication());
+    }
+
+    void setValSplash(){
+        String from = "#ffffff", to = "#ffffff";
+        int style = 1;
+        JSONObject object = new JSONObject(JsonManager.getJsonSplash(getApplication()));
+        if (!object.isNull("theme")) {
+            switch (object.getString("theme")) {
+                case "Jibres":
+                    style = 1;
+                    break;
+                default:
+                    style = 2;
+                    break;
+            }
+        }
     }
 
     public void Refresh() {

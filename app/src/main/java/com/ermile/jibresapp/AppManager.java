@@ -44,6 +44,7 @@ public class AppManager {
     public static AppManager get(Context context) {
         return new AppManager(context);
     }
+
     public void setAppLanguage(String languageLocal) {
             editor.putString(appLanguage, languageLocal);
             editor.apply();
