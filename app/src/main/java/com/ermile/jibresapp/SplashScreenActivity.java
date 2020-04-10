@@ -8,6 +8,7 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Locale;
@@ -28,6 +29,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         prefMan = new SliderPrefManager(this);
 //        langpref = new LangPrefManager(this);
         setDefaultLanguage();
+        setValSplash();
         haveNetwork();
 //        ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 //
@@ -112,7 +114,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         return AppManager.getAppLanguage(getApplication());
     }
 
-    void setValSplash(){
+    void setValSplash() throws JSONException {
         String from = "#ffffff", to = "#ffffff";
         int style = 1;
         JSONObject object = new JSONObject(JsonManager.getJsonSplash(getApplication()));
