@@ -20,7 +20,8 @@ class fileUtil {
                 return string;
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+//            e.printStackTrace();
         }
     }
 }
