@@ -29,7 +29,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         prefMan = new SliderPrefManager(this);
 //        langpref = new LangPrefManager(this);
         setDefaultLanguage();
-        setValSplash();
+        try {
+            setValSplash();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         haveNetwork();
 //        ConnectivityManager manager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 //
@@ -115,6 +119,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     void setValSplash() throws JSONException {
+
         String from = "#ffffff", to = "#ffffff";
         int style = 1;
         JSONObject object = new JSONObject(JsonManager.getJsonSplash(getApplication()));
