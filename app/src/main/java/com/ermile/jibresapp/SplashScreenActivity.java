@@ -4,9 +4,14 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.airbnb.lottie.LottieAnimationView;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,6 +21,8 @@ import java.util.Locale;
 public class SplashScreenActivity extends AppCompatActivity {
     private SliderPrefManager prefMan;
 //    private LangPrefManager langpref;
+    LottieAnimationView animationView;
+    int sleep = 500;
     @Override
     protected void onResume() {
 
@@ -132,6 +139,56 @@ public class SplashScreenActivity extends AppCompatActivity {
                     style = 2;
                     break;
             }
+        }
+        if (style == 2) {
+                animationView.setVisibility(View.INVISIBLE);
+            } else {
+                animationView.setVisibility(View.VISIBLE);
+            }
+            if (!object.isNull("sleep")) {
+                sleep = object.getInt("sleep");
+            }
+            if (!object.isNull("logo")) {
+                try {
+                    Glide.with(this)
+                            .applyDefaultRequestOptions(new RequestOptions()
+                                    .placeholder(R.drawable.logo)
+                                    .error(R.drawable.logo))
+                            .load(object.getString("logo"))
+                            .into(logo);
+                } catch (Exception e) {
+
+                }
+            }
+            if (!object.isNull("title")) {
+                app_name.setText(object.getString("title"));
+            }
+            if (!object.isNull("desc")) {
+                slug.setText(object.getString("desc"));
+            }
+            if (!object.isNull("meta")) {
+                meta.setText(object.getString("meta"));
+            }
+            if (!object.isNull("bg")) {
+                JSONObject bg = object.getJSONObject("bg");
+                if (!bg.isNull("from"))
+                    from = bg.getString("from");
+                if (!bg.isNull("to"))
+                    to = bg.getString("to");
+            }
+            if (!object.isNull("color")) {
+                JSONObject color = object.getJSONObject("color");
+                if (!color.isNull("primary")) {
+                    app_name.setTextColor(Color.parseColor(color.getString("primary")));
+                    slug.setTextColor(Color.parseColor(color.getString("primary")));
+                }
+                if (!color.isNull("secondary")) {
+                    meta.setTextColor(Color.parseColor(color.getString("secondary")));
+                }
+            }
+            if (from != null || to != null) ColorUtil.setGradient(background, from, to);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 
