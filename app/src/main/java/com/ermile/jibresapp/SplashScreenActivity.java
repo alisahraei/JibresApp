@@ -1,11 +1,14 @@
 package com.ermile.jibresapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,6 +26,9 @@ public class SplashScreenActivity extends AppCompatActivity {
 //    private LangPrefManager langpref;
     LottieAnimationView animationView;
     int sleep = 500;
+    ImageView logo;
+    TextView app_name, slug, meta;
+    View background;
     @Override
     protected void onResume() {
 
@@ -186,10 +192,10 @@ public class SplashScreenActivity extends AppCompatActivity {
                     meta.setTextColor(Color.parseColor(color.getString("secondary")));
                 }
             }
-            if (from != null || to != null) ColorUtil.setGradient(background, from, to);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        ColorUtil.setGradient(background, from, to);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void Refresh() {
